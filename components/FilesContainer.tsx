@@ -1,28 +1,16 @@
+
 import React from 'react'
 import { readFileSync } from 'fs'
+
 import FileItem from './FileItem'
-const FilesContainer = ({ files, path }: { files: string[], path: string }) => {
-    files.forEach(file => {
-        try {
-
-            // const data = readFileSync(`D:\\${path}\\${file}`)
-            // console.log(data)
-        } catch (e) {
-            console.log(e)
-        }
-
-
-    })
+import { getFiles } from '@/helpers/getFiles'
+const FilesContainer = ({  path }: {  path: string }) => {
+    const files = getFiles(path)
     return (
-        <>
-            {files.map((file, index) => {
-
-                return (
-                    <FileItem content={file} />
-                )
-
-            })}
-        </>
+        <section className='bg-[#03001C] gap-4  flex flex-col  text-white p-4'>
+            <h2 className='text-center font-bold text-xl'>Content</h2>
+            {files.map(file => <FileItem content={file}/>)}
+        </section>
     )
 }
 
