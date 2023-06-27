@@ -1,6 +1,6 @@
 import { getFiles } from '@/helpers/getFiles'
 import FilesContainer from '@/components/FilesContainer'
-import Header from '@/components/Header'
+import Header from '@/components/Header/Header'
 
 const RoutePage = ({params } : {params : {route : string}}) => {
     const {route} = params
