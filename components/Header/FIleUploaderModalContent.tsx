@@ -13,7 +13,6 @@ const FileUploaderModalContent = () => {
             <label className="flex flex-col gap-3" >
                 <input onChange={({ target }) => {
                     if (target.files) {
-                        console.log(target.files)
                         const file = target.files[0]
                         setSelectedImage(URL.createObjectURL(file))
                         setSelectedFile(file)
@@ -37,7 +36,6 @@ const FileUploaderModalContent = () => {
                         });
 
                         const res = await req.json();
-                        console.log(res)
 
                     } catch (error: any) {
                         console.log(error.response?.data);

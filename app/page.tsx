@@ -1,4 +1,4 @@
-import FilesContainer from '@/components/FilesContainer'
+import FilesContainer from '@/components/Content/FilesContainer'
 import Header from '@/components/Header/Header'
 import Modal from '@/components/Modal'
 

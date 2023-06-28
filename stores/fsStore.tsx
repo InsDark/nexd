@@ -6,6 +6,6 @@ interface fsStore {
 }
 
 export const fsStore = create<fsStore>((set) => ({
-    path: "D:\\",
+    path: "",
     setPath: (newPath: string) => set({path: newPath})
 }))

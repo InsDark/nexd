@@ -1,18 +1,15 @@
-import { getFiles } from '@/helpers/getFiles'
-import FilesContainer from '@/components/FilesContainer'
+import FilesContainer from '@/components/Content/FilesContainer'
 import Header from '@/components/Header/Header'
+import Modal from '@/components/Modal'
+import { Params } from 'next/dist/shared/lib/router/utils/route-matcher'
 
-const RoutePage = ({params } : {params : {route : string}}) => {
-    const {route} = params
-    let routeParsed = ''
-    routeParsed = route.replaceAll('-', '\\')
-    routeParsed = routeParsed.replaceAll('%20', ' ')
-    const files = getFiles(`D:\\${routeParsed}`)
+export default function RoutePage({params} : Params) {
+  const {route} = params
   return (
-    <main className='bg-slate-800 text-white h-screen w-screen'> 
-        {files.length > 0 ? <FilesContainer path={routeParsed} files={files}/> : (<p>No files</p>)}
+    <main className='h-screen flex flex-col gap-4 bg-[rgb(3,0,28)] '>
+      <Header route={route} />
+      <FilesContainer path={route} />
+      <Modal/>
     </main>
   )
 }
-
-export default RoutePage
