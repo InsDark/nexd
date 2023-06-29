@@ -1,11 +1,15 @@
-import {read, readFile, readFileSync} from 'fs'
+import { readFile} from 'fs'
 import { NextApiRequest, NextApiResponse } from 'next'
-const expoFile = (req : NextApiRequest, res : NextApiResponse) => {
+interface Request extends NextApiRequest {
+    query: {
+        path: string
+    }
+}
+const expoFile = (req : Request, res : NextApiResponse) => {
     if(req.method !== 'GET') return  
-    const {path} : {path: string}  = req.query  
+    const {path} : { path: string} = req.query   
     let parsedPath = ''
     parsedPath = path.replaceAll("-", "\\")
-    const hrstart = process.hrtime()
 
     readFile(`D:\\${parsedPath}`, (err, data) => {
         if(err) {
@@ -17,7 +21,6 @@ const expoFile = (req : NextApiRequest, res : NextApiResponse) => {
         }
         res.end(data)
     })
-    console.log('Time', `${process.hrtime(hrstart)[1]/1000000} ms`)
 }   
 
 export default expoFile
