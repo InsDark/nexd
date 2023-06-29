@@ -18,7 +18,10 @@ const FileItem = ({ content, path  }: { content: string, path: string }) => {
                 {content}
             </h3>
             {fileType ? 
-            <FaDownload cursor={'pointer'} className='hover:bg-[#03001C] p-2' size={35} /> : null
+            <a href={`/api/file/${parsedRoute}-${content}`} download>
+                <FaDownload cursor={'pointer'} className='hover:bg-[#03001C] p-2' size={35} />
+            </a>
+            : null
             }
         </div>
     )
