@@ -19,7 +19,7 @@ const Modal = () => {
                     backgroundColor: "rgba(3,0,28, 0.75)"
                 }
             }}
-            className={'absolute inset-[40px] overflow-auto outline-none p-[20px] rounded bg-slate-900 text-white flex  justify-center items-center'}
+            className={'absolute inset-[40px] overflow-auto outline-none p-[20px] rounded flex-wrap bg-slate-900 text-white flex  justify-center items-center'}
         >
             {content}
         </ReactModal >
