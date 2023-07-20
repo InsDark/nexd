@@ -7,7 +7,7 @@ const FileUploaderModalContent = () => {
     const [uploading, setUploading] = useState(false);
     const [selectedFiles, setSelectedFiles] = useState<File[]>([]);
     return (
-        <div className="flex-col flex gap-4">
+        <div className="flex-col w-full sm:w-[20rem] flex gap-4">
             <h3 className="text-center font-blod text-xl">Upload Files</h3>
             <form className="flex flex-col gap-3">
                 <label htmlFor="inputFiles"></label>

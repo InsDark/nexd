@@ -16,7 +16,6 @@ const readFile = (
   options.uploadDir = `D:\\${filePath}`;
   options.filename = (name, ext, path, form) => {
     const {originalFilename} = path
-    console.log(originalFilename)
     return originalFilename + ''
   }
 

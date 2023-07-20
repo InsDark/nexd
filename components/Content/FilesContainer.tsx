@@ -2,8 +2,9 @@ import React from 'react'
 
 import FileItem from './FileItem'
 import { getFiles } from '@/helpers/getFiles'
+import { CONSTANTS } from '@/helpers/Constans'
 const FilesContainer = ({  path }: {  path: string }) => {
-    let parsedRoute = path.replaceAll('-', '/')
+    let parsedRoute = path.replaceAll(CONSTANTS.FILESEPARATOR, '/')
     parsedRoute = parsedRoute.replaceAll('%20', ' ')
     const files = path ? getFiles(parsedRoute)  : getFiles('')
     return (

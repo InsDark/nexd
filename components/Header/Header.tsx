@@ -3,9 +3,10 @@ import { FaArrowUpFromBracket } from 'react-icons/fa6'
 import HeaderBtn from "./HeaderBtn"
 import FileMakerModalContent from "./FileMakerModalContent"
 import FileUploaderModalContent from "./FIleUploaderModalContent"
+import { CONSTANTS } from "@/helpers/Constans"
 const Header = ({ route }: { route: string }) => {
     let parsedRoute = ""
-    parsedRoute = route.replaceAll('-', '\\')
+    parsedRoute = route.replaceAll(CONSTANTS.FILESEPARATOR, '\\')
     parsedRoute = parsedRoute.replaceAll('%20', ' ')
     return (
         <header className="flex-col  bg-[#03001C] sticky top-0">
